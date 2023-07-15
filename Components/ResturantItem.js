@@ -13,6 +13,7 @@ const ResturantItem = ({navigation}) => {
                 name: food.name,
                 img: food.image,
                 description: food.description,
+                price: food.price
             })}>
             <View>
                 <ResturantImage img={food.image} />
