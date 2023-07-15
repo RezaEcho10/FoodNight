@@ -3,15 +3,22 @@ import React from 'react'
 import {Foods} from '../Constant'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
-const ResturantItem = () => {
+const ResturantItem = ({navigation}) => {
+
   return (
     <ScrollView>
       {
         Foods.map(food => (
+            <TouchableOpacity onPress={() => navigation.navigate("ResturantDetails", {
+                name: food.name,
+                img: food.image,
+                description: food.description,
+            })}>
             <View>
                 <ResturantImage img={food.image} />
                 <ResturantInfo name={food.name} />
             </View>
+            </TouchableOpacity>
         ))
       }
     </ScrollView>
@@ -20,7 +27,7 @@ const ResturantItem = () => {
 
 const ResturantImage = (props) => {
     return (
-        <View style={{
+            <View style={{
             width: '100%',
             margin: 'auto',
             marginTop: 30,

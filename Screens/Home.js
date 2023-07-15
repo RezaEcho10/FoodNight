@@ -5,7 +5,7 @@ import SearchBar from '../Components/SearchBar'
 import Categories from '../Components/Categories'
 import ResturantItem from '../Components/ResturantItem'
 import FooterTabs from '../Components/FooterTabs'
-const Home = () => {
+const Home = ({navigation, route}) => {
   return (
     <SafeAreaView style={{marginLeft: 'auto', marginRight: 'auto', marginTop: 10, width: '95%', flex: 1}}>
       <View style={{backgroundColor: 'white', padding: 15}}>
@@ -13,7 +13,7 @@ const Home = () => {
         <SearchBar />
       </View>
       <Categories />
-      <ResturantItem />
+      <ResturantItem navigation={navigation} />
       <FooterTabs />
     </SafeAreaView>
   )
